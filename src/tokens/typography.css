@@ -1,8 +1,11 @@
 :root {
   --font-family-base: 'Inter', system-ui, sans-serif;
   --font-weight-light:   300;
-  --font-size-xs:    12px;
-  --font-size-sm:    14px;
+  --font-size-badge: 12px;
+  --font-size-captions: 14px;
+  /* Backward-compatible aliases */
+  --font-size-xs: var(--font-size-badge);
+  --font-size-sm: var(--font-size-captions);
   --font-size-md:    16px;
   --font-size-lg:    16px;
   --font-weight-regular: 400;
