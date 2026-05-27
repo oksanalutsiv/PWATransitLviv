@@ -119,12 +119,12 @@
 }
 
 .transferStop {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-captions);
   color: var(--color-text-muted);
 }
 
 .transferWalk {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-captions);
   color: var(--color-text);
   margin-top: 2px;
   display: flex;
