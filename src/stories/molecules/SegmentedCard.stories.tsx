@@ -15,7 +15,7 @@ const meta = {
           '',
           '**Changelog**',
           '- Shadow updated from `--shadow-lg` to `--shadow-md` (`0 2px 12px rgba(0,0,0,0.12)`) for a lighter appearance.',
-          '- Row typography aligned with MenuCard: `--font-size-md` (14px) / `--font-weight-medium` (500). Bold variant uses `--font-size-lg` (16px) / `--font-weight-bold` (700).',
+          '- Row typography aligned with MenuCard: `--font-size-md` (16px) / `--font-weight-medium` (500). Bold variant uses `--font-size-lg` (16px) / `--font-weight-bold` (700).',
         ].join('\n'),
       },
     },

@@ -37,7 +37,7 @@ const meta = {
           '',
           '**Changelog**',
           '- Shadow updated from `--shadow-lg` to `--shadow-md` (`0 2px 12px rgba(0,0,0,0.12)`) for a lighter appearance.',
-          '- Label uses `--font-size-md` (14px) / `--font-weight-medium` (500), consistent with SegmentedCard.',
+          '- Label uses `--font-size-md` (16px) / `--font-weight-medium` (500), consistent with SegmentedCard.',
         ].join('\n'),
       },
     },

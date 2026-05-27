@@ -9,11 +9,11 @@ All type tokens are defined in `src/tokens/typography.css`. The base font is **I
 ## Font Sizes
 
 export const sizes = [
-  { token: '--font-size-xs',    value: '11px', label: 'XS — badges, hints, transfer labels' },
-  { token: '--font-size-sm',    value: '12px', label: 'SM — meta, captions' },
-  { token: '--font-size-label', value: '13px', label: 'Label — form labels, section headings' },
-  { token: '--font-size-md',    value: '14px', label: 'MD — default UI text, body text' },
-  { token: '--font-size-lg',    value: '16px', label: 'LG — titles, prominent labels' },
+  { token: '--font-size-xs',    value: '12px', label: 'XS — badges, hints, transfer labels' },
+  { token: '--font-size-sm',    value: '14px', label: 'SM / Label — meta, captions, form labels, section headings' },
+  { token: '--font-size-label', value: '14px', label: 'Label alias — same as SM for compatibility' },
+  { token: '--font-size-md',    value: '16px', label: 'MD / LG — default UI text, body text, prominent labels' },
+  { token: '--font-size-lg',    value: '16px', label: 'LG alias — same as MD for compatibility' },
   { token: '--font-size-title', value: '18px', label: 'Title — card headings, counters' },
 ]
 
@@ -46,8 +46,8 @@ export const sizes = [
 
 ## Section Heading Pattern
 
-Labels used for section headings throughout the app (`--font-size-label`, weight 600, uppercase, `--letter-spacing-label: 0.06em`):
+Labels used for section headings throughout the app (`--font-size-label`, now 14px, weight 600, uppercase, `--letter-spacing-label: 0.06em`):
 
-<div style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: 13, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#3F3F3F', padding: '8px 0' }}>
+<div style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: 14, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#3F3F3F', padding: '8px 0' }}>
   Метод оплати
 </div>
