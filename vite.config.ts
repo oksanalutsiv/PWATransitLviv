@@ -12,7 +12,7 @@ const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(file
 export default defineConfig({
   plugins: [
     react(),
-    VitePWA({
+    ...(process.env.STORYBOOK ? [] : [VitePWA({
       strategies: 'injectManifest',
       srcDir: 'src/sw',
       filename: 'service-worker.ts',
@@ -33,7 +33,7 @@ export default defineConfig({
           { src: '/icons/icon-512-maskable.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
         ],
       },
-    }),
+    })]),
   ],
   resolve: {
     alias: { '@': path.resolve(dirname, 'src') },
