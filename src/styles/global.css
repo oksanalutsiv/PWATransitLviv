@@ -41,6 +41,7 @@
 html,
 body {
   height: 100%;
+  color-scheme: light;
   font-family: var(--font-family-base);
   font-weight: var(--font-weight-light);
   font-size: var(--font-size-md);
