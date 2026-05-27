@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '@/store/authSlice'
 import { ROUTES } from '@/router/routes'
-import { IconBus } from '@/assets/Icons'
+import logo2 from '@/assets/Icons/Logo2.svg'
 import styles from './LandingPage.module.css'
 
 const LandingPage = () => {
@@ -18,8 +18,7 @@ const LandingPage = () => {
 
   return (
     <div className={styles.splash}>
-      <IconBus size={64} className={styles.icon} />
-      <h1 className={styles.name}>LvivTransit</h1>
+      <img src={logo2} alt="LvivTransit" width={180} className={styles.logo} />
       <p className={styles.tagline}>Громадський транспорт Львова</p>
       <div className={styles.loader} aria-hidden="true" />
     </div>
