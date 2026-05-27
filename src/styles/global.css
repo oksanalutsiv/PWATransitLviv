@@ -41,7 +41,8 @@
 html,
 body {
   height: 100%;
-  color-scheme: light;
+  color-scheme: only light;
+  background-color: var(--color-surface-default);
   font-family: var(--font-family-base);
   font-weight: var(--font-weight-light);
   font-size: var(--font-size-md);
@@ -53,6 +54,7 @@ body {
 
 #root {
   height: 100%;
+  background-color: var(--color-surface-default);
   /* PWA safe areas for notch/home indicator */
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
