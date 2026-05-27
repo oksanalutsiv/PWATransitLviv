@@ -119,7 +119,7 @@
 }
 
 .stopName {
-  font-size: 14px;
+  font-size: var(--font-size-md);
   color: var(--color-text);
 }
 

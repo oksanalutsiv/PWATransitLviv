@@ -7,12 +7,10 @@ import Notification from '@/components/ui/Notification/Notification'
 import styles from './SettingsPage.module.css'
 
 type Language = 'uk' | 'en'
-type Theme = 'light' | 'dark'
 
 const SettingsPage = () => {
   const user = useAuthStore((s) => s.user)
   const [language, setLanguage] = useState<Language>('uk')
-  const [theme, setTheme] = useState<Theme>('light')
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
 
@@ -21,12 +19,11 @@ const SettingsPage = () => {
     getProfile(user.id).then(({ data }) => {
       if (data) {
         setLanguage(data.language)
-        setTheme(data.theme)
       }
     })
   }, [user])
 
-  const save = async (patch: { language?: Language; theme?: Theme }) => {
+  const save = async (patch: { language?: Language }) => {
     if (!user) return
     setSaving(true)
     setSaved(false)
@@ -39,11 +36,6 @@ const SettingsPage = () => {
   const handleLanguage = (val: Language) => {
     setLanguage(val)
     save({ language: val })
-  }
-
-  const handleTheme = (val: Theme) => {
-    setTheme(val)
-    save({ theme: val })
   }
 
   return (
@@ -70,30 +62,6 @@ const SettingsPage = () => {
                 aria-pressed={language === 'en'}
               >
                 EN
-              </button>
-            </div>
-          </div>
-
-          <div className={styles.rowDivider} />
-
-          <div className={styles.row}>
-            <span className={styles.rowLabel}>Тема</span>
-            <div className={styles.segment} role="group" aria-label="Тема">
-              <button
-                type="button"
-                className={`${styles.segBtn} ${theme === 'light' ? styles.segBtnActive : ''}`}
-                onClick={() => handleTheme('light')}
-                aria-pressed={theme === 'light'}
-              >
-                Світла
-              </button>
-              <button
-                type="button"
-                className={`${styles.segBtn} ${theme === 'dark' ? styles.segBtnActive : ''}`}
-                onClick={() => handleTheme('dark')}
-                aria-pressed={theme === 'dark'}
-              >
-                Темна
               </button>
             </div>
           </div>

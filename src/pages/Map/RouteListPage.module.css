@@ -85,7 +85,7 @@
 
 .legName {
   flex: 1;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   color: var(--color-text);
   font-weight: 500;
 }
@@ -133,7 +133,7 @@
 }
 
 .transferArrival {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   font-weight: 600;
   color: var(--color-primary);
   white-space: nowrap;

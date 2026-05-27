@@ -14,12 +14,6 @@
   padding: 20px var(--space-4);
 }
 
-.rowDivider {
-  height: 1px;
-  background: var(--color-border);
-  margin: 0 var(--space-4);
-}
-
 .rowLabel {
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-medium);
@@ -27,7 +21,7 @@
   flex: 1;
 }
 
-/* Segment control (УК | EN, Світла | Темна) */
+/* Segment control (УК | EN) */
 .segment {
   display: flex;
   border-radius: 8px;
