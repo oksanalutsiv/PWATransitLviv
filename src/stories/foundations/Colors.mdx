@@ -1,0 +1,74 @@
+---
+title: Foundations/Colors
+---
+
+# Colors
+
+All colors are defined as CSS custom properties in `src/tokens/colors.css`.
+
+export const Swatch = ({ color, label, token }) => (
+  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
+    <div style={{ width: 48, height: 48, borderRadius: 8, background: color, border: '1px solid rgba(0,0,0,0.08)', flexShrink: 0 }} />
+    <div>
+      <div style={{ fontSize: 13, fontWeight: 600, color: '#141414' }}>{label}</div>
+      <code style={{ fontSize: 11, color: '#ADADAD' }}>{token}</code>
+    </div>
+  </div>
+)
+
+export const Section = ({ title, children }) => (
+  <div style={{ marginBottom: 24 }}>
+    <h3 style={{ fontSize: 13, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#ADADAD', marginBottom: 12 }}>{title}</h3>
+    {children}
+  </div>
+)
+
+<Section title="Brand">
+  <Swatch color="#3F3F3F" label="Primary" token="--color-primary" />
+  <Swatch color="#565656" label="Primary Inactive" token="--color-primary-inactive" />
+  <Swatch color="#141414" label="Primary Active" token="--color-primary-active" />
+</Section>
+
+export const GradientSwatch = ({ label, token }) => (
+  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
+    <div style={{ width: 48, height: 48, borderRadius: 8, background: 'linear-gradient(180deg, #E6F1F6 0.15%, #F8ECF6 28.94%, #F6F1EC 67.38%, #F0FBF5 99.38%)', border: '1px solid rgba(0,0,0,0.08)', flexShrink: 0 }} />
+    <div>
+      <div style={{ fontSize: 13, fontWeight: 600, color: '#141414' }}>{label}</div>
+      <code style={{ fontSize: 11, color: '#ADADAD' }}>{token}</code>
+    </div>
+  </div>
+)
+
+<Section title="Surface">
+  <Swatch color="#F5F7FA" label="Surface Default" token="--color-surface-default" />
+  <Swatch color="rgba(255,255,255,0.5)" label="Card BG" token="--color-card-bg" />
+  <GradientSwatch label="Surface Gradient" token="--color-surface-gradient" />
+</Section>
+
+<Section title="Transport Types">
+  <Swatch color="#9C1A87" label="Bus" token="--color-bus" />
+  <Swatch color="#008CCC" label="Tram" token="--color-tram" />
+  <Swatch color="#E87D0D" label="Trolleybus" token="--color-trolley" />
+</Section>
+
+<Section title="Status">
+  <Swatch color="#009645" label="Success" token="--color-success" />
+  <Swatch color="#E87D0D" label="Warning" token="--color-warning" />
+  <Swatch color="#D12421" label="Error" token="--color-error" />
+</Section>
+
+<Section title="Occupancy">
+  <Swatch color="#009645" label="Low" token="--color-occupancy-low" />
+  <Swatch color="#E87D0D" label="Medium" token="--color-occupancy-medium" />
+  <Swatch color="#D12421" label="High" token="--color-occupancy-high" />
+</Section>
+
+<Section title="Text">
+  <Swatch color="#141414" label="Text" token="--color-text" />
+  <Swatch color="#3F3F3F" label="Text Secondary" token="--color-text-secondary" />
+  <Swatch color="#ADADAD" label="Text Muted" token="--color-text-muted" />
+</Section>
+
+<Section title="Border">
+  <Swatch color="#E0E0E0" label="Border" token="--color-border" />
+</Section>

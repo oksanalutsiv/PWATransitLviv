@@ -1,0 +1,22 @@
+.card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.title {
+  font-size: var(--font-size-label);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+  margin: 0;
+  padding: var(--space-4) var(--space-4) 0;
+}
+
+.divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 0 var(--space-4);
+}

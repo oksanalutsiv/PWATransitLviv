@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LvivTransit — Офлайн</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #F5F7FA;
+      color: #1A1A2E;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .icon {
+      width: 80px;
+      height: 80px;
+      background: #1B4F9B;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+
+    .icon svg {
+      width: 44px;
+      height: 44px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #6B7280;
+      line-height: 1.6;
+      max-width: 280px;
+    }
+
+    .retry {
+      margin-top: 32px;
+      padding: 14px 32px;
+      background: #1B4F9B;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .retry:active {
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+  <div class="icon">
+    <!-- Wi-Fi off icon -->
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <line x1="1" y1="1" x2="23" y2="23"/>
+      <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/>
+      <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/>
+      <path d="M10.71 5.05A16 16 0 0 1 22.56 9"/>
+      <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/>
+      <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+      <circle cx="12" cy="20" r="1" fill="#fff" stroke="none"/>
+    </svg>
+  </div>
+
+  <h1>Немає з'єднання</h1>
+  <p>Перевірте підключення до інтернету та спробуйте ще раз.<br/>Раніше переглянуті квитки доступні офлайн.</p>
+
+  <button class="retry" onclick="window.location.reload()">Спробувати знову</button>
+</body>
+</html>

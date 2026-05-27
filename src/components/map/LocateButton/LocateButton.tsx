@@ -1,0 +1,32 @@
+import styles from './LocateButton.module.css'
+
+interface LocateButtonProps {
+  active?: boolean
+  loading?: boolean
+  onClick: () => void
+}
+
+const GpsIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M31.5 4C32.8807 4 34 5.11929 34 6.5V9.13867C44.429 10.2916 52.7084 18.5711 53.8613 29H56.5C57.8807 29 59 30.1193 59 31.5C59 32.8807 57.8807 34 56.5 34H53.8613C52.7084 44.4289 44.4289 52.7074 34 53.8604V56.5C34 57.8807 32.8807 59 31.5 59C30.1193 59 29 57.8807 29 56.5V53.8604C18.5711 52.7074 10.2916 44.4289 9.13867 34H6.5C5.11929 34 4 32.8807 4 31.5C4 30.1193 5.11929 29 6.5 29H9.13867C10.2916 18.5711 18.5711 10.2916 29 9.13867V6.5C29 5.11929 30.1193 4 31.5 4ZM31.5 14C21.835 14 14 21.835 14 31.5C14 41.165 21.835 49 31.5 49C41.165 49 49 41.165 49 31.5C49 21.835 41.165 14 31.5 14ZM31.5 21.5C37.023 21.5 41.5 25.977 41.5 31.5C41.5 37.023 37.023 41.5 31.5 41.5C25.977 41.5 21.5 37.023 21.5 31.5C21.5 25.977 25.977 21.5 31.5 21.5ZM31.5 26.5C28.7385 26.5 26.5 28.7385 26.5 31.5C26.5 34.2615 28.7385 36.5 31.5 36.5C34.2615 36.5 36.5 34.2615 36.5 31.5C36.5 28.7385 34.2615 26.5 31.5 26.5Z" fill="currentColor"/>
+  </svg>
+)
+
+/** Round button that triggers geolocation. Shows active (blue) and loading (spinning) states. */
+const LocateButton = ({ active = false, loading = false, onClick }: LocateButtonProps) => (
+  <button
+    type="button"
+    className={[
+      styles.btn,
+      active ? styles.active : '',
+      loading ? styles.spinning : '',
+    ].join(' ').trim()}
+    onClick={onClick}
+    aria-label="Моє місцезнаходження"
+    title="Моє місцезнаходження"
+  >
+    <GpsIcon />
+  </button>
+)
+
+export default LocateButton

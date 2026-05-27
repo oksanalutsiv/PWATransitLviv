@@ -1,0 +1,32 @@
+.map {
+  width: 100%;
+  height: 100%;
+  /* Override Leaflet's default z-index so our TopBar stays on top */
+  z-index: 0;
+}
+
+/* Custom stop dot marker */
+:global(.leaflet-container) {
+  font-family: var(--font-family-base);
+}
+
+.stopDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  border: 2px solid #fff;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--easing-default);
+}
+
+.stopDot:hover {
+  transform: scale(1.4);
+}
+
+/* User location icon */
+.locationIcon {
+  color: var(--color-primary);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}

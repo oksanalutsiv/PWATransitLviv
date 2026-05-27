@@ -1,0 +1,12 @@
+.page { min-height: 100dvh; display: flex; flex-direction: column; }
+.logoWrap { height: 50dvh; display: flex; align-items: center; justify-content: center; width: 100%; }
+.formHalf { height: 50dvh; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 0 var(--space-4); overflow-y: auto; }
+.logo { display: block; filter: brightness(0) invert(1) drop-shadow(0 4px 24px rgba(0,0,0,0.12)); }
+.form { width: 100%; max-width: 380px; background: var(--color-card-bg); border: none; border-radius: var(--radius-md); padding: 20px var(--space-4); display: flex; flex-direction: column; gap: var(--space-4); box-shadow: var(--shadow-md); flex-shrink: 0; }
+.fields { display: flex; flex-direction: column; gap: var(--space-4); }
+.submitBtn { margin-top: var(--space-4); }
+.title { font-size: var(--font-size-lg); font-weight: 600; color: var(--color-text); margin: 0; }
+.error { color: var(--color-error); font-size: var(--font-size-label); background: color-mix(in srgb, var(--color-error) 8%, transparent); border: 1px solid color-mix(in srgb, var(--color-error) 30%, transparent); border-radius: var(--radius-sm); padding: var(--spacing-sm) var(--spacing-md); margin: 0; }
+.switchText { text-align: left; font-size: 12px; color: var(--color-text-secondary); margin: 0; }
+.switchLink { color: var(--color-primary); font-weight: 600; text-decoration: none; }
+.switchLink:hover { text-decoration: underline; }

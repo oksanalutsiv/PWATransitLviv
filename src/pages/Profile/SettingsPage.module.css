@@ -1,0 +1,67 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-card-bg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px var(--space-4);
+}
+
+.rowDivider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 0 var(--space-4);
+}
+
+.rowLabel {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  flex: 1;
+}
+
+/* Segment control (УК | EN, Світла | Темна) */
+.segment {
+  display: flex;
+  border-radius: 8px;
+}
+
+.segBtn {
+  padding: 5px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  background: var(--color-border);
+  color: var(--color-text-muted);
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+  line-height: 1.4;
+}
+
+.segBtn:first-child { border-radius: 6px 0 0 6px; }
+.segBtn:last-child  { border-radius: 0 6px 6px 0; }
+
+.segBtnActive {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.status {
+  margin-top: var(--space-3);
+  font-size: var(--font-size-label);
+  color: var(--color-text-secondary);
+  text-align: right;
+}
+
+.statusOk {
+  margin-top: var(--space-3);
+}

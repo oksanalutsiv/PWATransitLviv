@@ -1,0 +1,16 @@
+:root {
+  --font-family-base: 'Inter', system-ui, sans-serif;
+  --font-weight-light:   300;
+  --font-size-xs:    11px;
+  --font-size-sm:    12px;
+  --font-size-md:    14px;
+  --font-size-lg:    16px;
+  --font-weight-regular: 400;
+  --font-weight-medium:  500;
+  --font-weight-bold:    700;
+  --line-height-tight:   1.2;
+  --line-height-base:    1.5;
+  --font-size-label: 13px;
+  --font-size-title: 18px;
+  --letter-spacing-label: 0.06em;
+}

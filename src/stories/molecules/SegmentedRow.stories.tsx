@@ -1,0 +1,56 @@
+import type { Meta, StoryObj } from '@storybook/react-vite'
+import SegmentedRow from '@/components/ui/SegmentedRow/SegmentedRow'
+
+const meta = {
+  title: 'Molecules/SegmentedRow',
+  component: SegmentedRow,
+  tags: ['autodocs'],
+  parameters: { layout: 'centered' },
+  decorators: [
+    (Story: React.ComponentType) => (
+      <div style={{ width: 358, background: 'var(--color-card-bg)', borderRadius: 'var(--radius-md)', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>
+        <Story />
+      </div>
+    ),
+  ],
+} satisfies Meta<typeof SegmentedRow>
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+const EditIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+    <path fillRule="evenodd" clipRule="evenodd" d="M49.6357 48.202C50.32 48.2021 50.9757 48.4762 51.459 48.9637C51.9422 49.4512 52.2138 50.112 52.2139 50.8006C52.2138 51.4893 51.9423 52.151 51.459 52.6385C50.9757 53.1258 50.3198 53.4001 49.6357 53.4002H35.3652C34.6809 53.4002 34.0244 53.1261 33.541 52.6385C33.0577 52.151 32.7872 51.4893 32.7871 50.8006C32.7872 50.1121 33.058 49.4512 33.541 48.9637C34.0244 48.4761 34.6808 48.202 35.3652 48.202H49.6357Z" fill="currentColor"/>
+    <path fillRule="evenodd" clipRule="evenodd" d="M45.8311 10.0028C48.1595 10.0617 50.3694 11.0504 51.9756 12.7508C53.5836 14.4529 54.4531 16.7294 54.3975 19.079C54.3417 21.4286 53.3635 23.6605 51.6768 25.2831L24.7754 51.1708C24.3795 51.5505 23.8733 51.7938 23.3311 51.8651L11.915 53.3768C11.4768 53.4349 11.0304 53.3783 10.6201 53.2127C10.21 53.0472 9.84851 52.7779 9.57129 52.4315C9.29423 52.0852 9.10991 51.6727 9.03613 51.2342C8.96241 50.7956 9.002 50.3447 9.15039 49.9256L13.4316 37.8407C13.5676 37.458 13.7905 37.112 14.083 36.8319L39.5576 12.4364C41.2463 10.8192 43.5027 9.94396 45.8311 10.0028ZM45.7051 15.1952C44.7436 15.1711 43.8104 15.5317 43.1123 16.2L43.1103 16.203L43.1074 16.2069L18.0859 40.1717L15.4277 47.6708L21.8252 46.8221L48.1201 21.5204L48.2471 21.3915C48.8673 20.734 49.2256 19.8652 49.248 18.953C49.2719 17.98 48.9117 17.0375 48.2471 16.3329C47.5824 15.6284 46.6681 15.2193 45.7051 15.1952Z" fill="currentColor"/>
+  </svg>
+)
+
+export const DataRow: Story = {
+  args: {
+    label: 'Квитки (2 шт.)',
+    value: '36 грн',
+  },
+}
+
+export const BoldTotalRow: Story = {
+  args: {
+    label: 'Разом',
+    value: '54 грн',
+    bold: true,
+  },
+}
+
+export const NavRow: Story = {
+  args: {
+    label: 'Редагувати профіль',
+    icon: <EditIcon />,
+    showArrow: true,
+    onClick: () => alert('Clicked'),
+  },
+}
+
+export const LabelOnly: Story = {
+  args: {
+    label: 'Проста позиція',
+  },
+}

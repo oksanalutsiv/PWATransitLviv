@@ -1,0 +1,26 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--color-surface-gradient);
+  background-attachment: fixed;
+}
+
+.noGradient {
+  background: var(--color-surface-default);
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  /* Leave room for the bottom nav */
+  padding-bottom: var(--bottom-nav-height);
+  /* Smooth scroll on iOS */
+  -webkit-overflow-scrolling: touch;
+}
+
+.contentFull {
+  flex: 1;
+  overflow: hidden;
+  padding-bottom: 0;
+}

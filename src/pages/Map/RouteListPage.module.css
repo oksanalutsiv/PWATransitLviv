@@ -1,0 +1,141 @@
+.searchContext {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: var(--space-4) 0 var(--space-1) 0;
+  padding: 0;
+  line-height: 1.4;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  list-style: none;
+  padding-top: var(--space-2);
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-12) var(--space-4);
+  text-align: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+}
+
+.hint {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.sectionLabel {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: var(--space-4) 0 var(--space-1) 0;
+  margin: 0;
+}
+
+/* Transfer card */
+.transferCard {
+  background: var(--color-card-bg);
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  display: block;
+  padding: 0;
+  transition: transform var(--duration-fast) var(--easing-default),
+              box-shadow var(--duration-fast) var(--easing-default);
+}
+
+.transferCard:active {
+  transform: scale(0.98);
+}
+
+.transferLeg {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  padding: 16px var(--space-4);
+}
+
+.number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.legName {
+  flex: 1;
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.chevron {
+  color: var(--color-text);
+  flex-shrink: 0;
+  transform: rotate(-90deg);
+}
+
+.transferBadge {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-4);
+  background: transparent;
+}
+
+.insetDivider {
+  margin: 0 var(--space-4);
+  width: auto;
+}
+
+.transferArrow {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-top: 2px;
+}
+
+.transferStop {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.transferWalk {
+  font-size: var(--font-size-xs);
+  color: var(--color-text);
+  margin-top: 2px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.transferArrival {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  white-space: nowrap;
+  margin-right: var(--space-1);
+}

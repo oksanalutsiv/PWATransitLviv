@@ -1,0 +1,25 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.level1 { background: color-mix(in srgb, var(--color-occupancy-low) 15%, transparent); color: var(--color-occupancy-low); }
+.level1 .dot { background: var(--color-occupancy-low); }
+
+.level2 { background: color-mix(in srgb, var(--color-occupancy-medium) 15%, transparent); color: var(--color-occupancy-medium); }
+.level2 .dot { background: var(--color-occupancy-medium); }
+
+.level3 { background: color-mix(in srgb, var(--color-occupancy-high) 15%, transparent); color: var(--color-occupancy-high); }
+.level3 .dot { background: var(--color-occupancy-high); }

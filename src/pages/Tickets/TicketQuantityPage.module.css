@@ -1,0 +1,4 @@
+.content { display: flex; flex-direction: column; gap: var(--space-6); }
+.summary { display: flex; justify-content: space-between; align-items: center; padding: 0 var(--space-4); }
+.summaryLabel { font-size: var(--font-size-lg); color: var(--color-text-secondary); }
+.summaryTotal { font-size: var(--font-size-title); font-weight: 700; color: var(--color-primary); }

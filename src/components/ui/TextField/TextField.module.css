@@ -1,0 +1,4 @@
+.group { display: flex; flex-direction: column; gap: 4px; }
+.label { font-size: var(--font-size-label); font-weight: 600; color: var(--color-text-muted); display: block; margin: 0; }
+.textarea { width: 100%; padding: var(--space-3); border: none; border-radius: var(--radius-md); font-size: var(--font-size-md); color: var(--color-text); background: var(--color-border); resize: none; box-sizing: border-box; font-family: inherit; outline: none; }
+.textarea:focus { background: color-mix(in srgb, var(--color-border) 80%, var(--color-primary)); }

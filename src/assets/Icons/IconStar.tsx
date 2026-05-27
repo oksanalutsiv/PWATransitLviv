@@ -1,0 +1,7 @@
+interface IconProps { size?: number; className?: string; style?: React.CSSProperties }
+
+export const IconStar = ({ size = 24, className, style }: IconProps) => (
+  <svg width={size} height={size} viewBox="0 0 60 60" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className={className} style={style}>
+    <path fillRule="evenodd" clipRule="evenodd" d="M26.1223 5.6701C27.6484 2.35085 32.3515 2.35085 33.8777 5.6701L39.8721 18.7061L54.0844 20.3963C57.703 20.8267 59.1563 25.3134 56.481 27.7951L45.9735 37.5421L48.7626 51.6228C49.473 55.208 45.6681 57.9809 42.4883 56.1954L30 49.1834L17.5116 56.1954C14.3318 57.9809 10.5271 55.208 11.2372 51.6228L14.0264 37.5421L3.51903 27.7951C0.843608 25.3134 2.29691 20.8267 5.91564 20.3963L20.1278 18.7061L26.1223 5.6701Z" />
+  </svg>
+)

@@ -1,0 +1,22 @@
+/* Single mobile breakpoint — all styles target screens up to 767px */
+@media (max-width: 767px) {
+  /* Breakpoint-specific overrides go here */
+}
+
+/* Desktop guard — hide app shell on wide screens, show install prompt */
+@media (min-width: 768px) {
+  body::before {
+    content: 'LvivTransit is a mobile app. Please open on a mobile device.';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    inset: 0;
+    background: var(--color-surface-default);
+    font-size: var(--font-size-lg);
+    color: var(--color-primary);
+    z-index: 9999;
+    padding: var(--space-8);
+    text-align: center;
+  }
+}

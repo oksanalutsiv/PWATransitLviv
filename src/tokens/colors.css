@@ -1,0 +1,37 @@
+:root {
+  /* Brand primary */
+  --color-primary:           #3F3F3F;
+  --color-primary-inactive:  #565656;
+  --color-primary-active:    #141414;
+
+  /* Surface */
+  --color-surface-default:   #F5F7FA;
+  --color-surface-gradient:  linear-gradient(180deg, #E6F1F6 0.15%, #F8ECF6 28.94%, #F6F1EC 67.38%, #F0FBF5 99.38%);
+
+  /* Transport type accents */
+  --color-bus:               #9C1A87;
+  --color-tram:              #008CCC;
+  --color-trolley:           #E87D0D;
+
+  /* Feedback / status */
+  --color-success:           #009645;
+  --color-warning:           #E87D0D;
+  --color-error:             #D12421;
+
+  /* Occupancy */
+  --color-occupancy-low:     #009645;
+  --color-occupancy-medium:  #E87D0D;
+  --color-occupancy-high:    #D12421;
+
+  /* Text */
+  --color-text:              #141414;
+  --color-text-secondary:    #3F3F3F;
+  --color-text-muted:        #ADADAD;
+
+  /* Border / divider */
+  --color-border:            #E0E0E0;
+
+  /* Aliases */
+  --color-card-bg:           rgba(255, 255, 255, 0.25);
+  --color-surface:           var(--color-surface-default);
+}

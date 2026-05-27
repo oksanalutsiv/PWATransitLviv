@@ -1,0 +1,10 @@
+.card { display: flex; justify-content: space-between; align-items: center; background: var(--color-card-bg); border-radius: var(--radius-md); box-shadow: var(--shadow-md); padding: var(--space-6) var(--space-4); gap: var(--spacing-md); }
+.left { flex: 1; display: flex; flex-direction: column; gap: var(--space-half); }
+.title { font-size: var(--font-size-md); font-weight: var(--font-weight-medium); color: var(--color-text); }
+.date { font-size: 12px; color: var(--color-text-secondary); }
+.right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.badge { font-size: var(--font-size-xs); font-weight: 600; padding: 2px 8px; border-radius: 99px; }
+.valid { background: color-mix(in srgb, var(--color-success) 15%, transparent); color: var(--color-success); }
+.active { background: color-mix(in srgb, var(--color-tram) 15%, transparent); color: var(--color-tram); }
+.used { background: var(--color-border); color: var(--color-text-secondary); }
+.qty { font-size: var(--font-size-label); color: var(--color-text-secondary); }

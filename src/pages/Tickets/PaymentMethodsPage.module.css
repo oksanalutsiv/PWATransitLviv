@@ -1,0 +1,9 @@
+.status { color: var(--color-text-secondary); text-align: center; padding: var(--spacing-xl); }
+.empty { display: flex; flex-direction: column; align-items: center; gap: var(--spacing-md); padding: var(--spacing-xl) var(--spacing-md); text-align: center; color: var(--color-text-secondary); }
+.emptyIcon { font-size: 48px; }
+.list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--space-3); }
+.content { display: flex; flex-direction: column; gap: var(--space-8); }
+.section { display: flex; flex-direction: column; gap: var(--space-8); }
+.sectionFields { display: flex; flex-direction: column; gap: var(--space-5); }
+.sectionTitle { font-size: var(--font-size-label); font-weight: 600; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: var(--letter-spacing-label); margin: 0; }
+.addBtn { background: #fff; }

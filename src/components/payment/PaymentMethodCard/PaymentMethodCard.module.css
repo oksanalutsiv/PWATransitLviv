@@ -1,0 +1,8 @@
+.card { display: flex; align-items: center; gap: var(--space-4); background: var(--color-card-bg); border-radius: var(--radius-md); box-shadow: var(--shadow-md); padding: var(--space-6) var(--space-4); }
+.icon { font-size: 24px; display: flex; align-items: center; color: var(--color-text); }
+.info { flex: 1; display: flex; flex-direction: column; gap: var(--space-half); }
+.label { font-size: 15px; font-weight: 600; color: var(--color-text); }
+.default { font-size: var(--font-size-xs); color: var(--color-primary); font-weight: 600; }
+.actions { display: flex; gap: var(--space-1); }
+.deleteBtn { display: flex; align-items: center; justify-content: center; color: var(--color-text-muted); flex-shrink: 0; padding: var(--space-1); border-radius: var(--radius-full); border: none; background: none; cursor: pointer; transition: color var(--duration-fast); line-height: 0; }
+.deleteBtn:active { color: var(--color-primary); }

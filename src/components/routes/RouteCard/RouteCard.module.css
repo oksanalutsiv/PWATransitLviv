@@ -1,0 +1,122 @@
+.card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-8) var(--space-4);
+  background: var(--color-card-bg);
+  border-radius: var(--radius-md);
+  border: none;
+  box-shadow: var(--shadow-md);
+  text-align: left;
+  cursor: pointer;
+  align-items: flex-start;
+  transition: transform var(--duration-fast) var(--easing-default),
+              box-shadow var(--duration-fast) var(--easing-default);
+}
+
+.card:active {
+  transform: scale(0.98);
+  box-shadow: var(--shadow-md);
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.arrowIcon {
+  transform: rotate(-90deg);
+  opacity: 0.4;
+  margin-top: auto;
+}
+
+.accessibilityIcon {
+  opacity: 0.5;
+}
+
+.number {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: -0.3px;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.name {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.type {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.accessible {
+  font-size: var(--font-size-label);
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.arrivalRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rightArrow {
+  transform: rotate(-90deg);
+  color: var(--color-text);
+}
+
+.arrival {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  letter-spacing: -0.2px;
+}
+
+.rating {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-warning);
+}
+
+.chevron {
+  color: var(--color-text-muted);
+}
