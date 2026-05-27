@@ -15,6 +15,7 @@ node_modules
 .env.*.local
 dist
 dist-ssr
+storybook-static
 *.local
 
 # Editor directories and files
