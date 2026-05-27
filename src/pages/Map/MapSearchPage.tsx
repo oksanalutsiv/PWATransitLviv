@@ -32,6 +32,49 @@ const MapSearchPage = () => {
   const [stops, setStops] = useState<Stop[]>([])
   const [locating, setLocating] = useState(false)
 
+  const requestLocation = useCallback((opts?: { setFromLabel?: boolean; showErrors?: boolean }) => {
+    const setFromLabel = opts?.setFromLabel ?? false
+    const showErrors = opts?.showErrors ?? false
+
+    if (!navigator.geolocation) {
+      if (showErrors) alert('Геолокація не підтримується цим браузером')
+      return
+    }
+
+    setLocating(true)
+
+    const watchId = navigator.geolocation.watchPosition(
+      (pos) => {
+        const loc = { lat: pos.coords.latitude, lng: pos.coords.longitude }
+        setUserLocation(loc)
+        if (setFromLabel) setFromQuery(MY_LOCATION_LABEL)
+        try { localStorage.setItem('lastLocation', JSON.stringify(loc)) } catch {}
+        navigator.geolocation.clearWatch(watchId)
+        setLocating(false)
+      },
+      (err) => {
+        navigator.geolocation.clearWatch(watchId)
+        setLocating(false)
+        if (!showErrors) return
+
+        if (err.code === 1 /* PERMISSION_DENIED */) {
+          alert('Доступ до геолокації відхилено.\nДозвольте доступ у налаштуваннях браузера (🔒 ліворуч від адресного рядка) та спробуйте ще раз.')
+        } else if (err.code === 2 /* POSITION_UNAVAILABLE */) {
+          alert('Не вдалося визначити місцезнаходження — сигнал недоступний.')
+        } else {
+          alert('Час очікування геолокації вичерпано. Спробуйте ще раз.')
+        }
+      },
+      { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
+    )
+
+    // Ensure spinner does not stick forever if browser never resolves GPS.
+    window.setTimeout(() => {
+      navigator.geolocation.clearWatch(watchId)
+      setLocating(false)
+    }, 16000)
+  }, [setUserLocation, setFromQuery])
+
   // Reset search fields every time this page mounts
   useEffect(() => {
     setQuery('')
@@ -59,44 +102,12 @@ const MapSearchPage = () => {
         }
       } catch {}
     }
-    if (!navigator.geolocation) return
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        const loc = { lat: pos.coords.latitude, lng: pos.coords.longitude }
-        setUserLocation(loc)
-        try { localStorage.setItem('lastLocation', JSON.stringify(loc)) } catch {}
-      },
-      () => { /* permission denied or unavailable — stay on city view */ },
-      { enableHighAccuracy: false, timeout: 8000, maximumAge: 60000 }
-    )
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+    requestLocation({ showErrors: false })
+  }, [requestLocation, userLocation, setUserLocation])
 
   const handleLocate = useCallback(() => {
-    if (!navigator.geolocation) {
-      alert('Геолокація не підтримується цим браузером')
-      return
-    }
-    setLocating(true)
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        const loc = { lat: pos.coords.latitude, lng: pos.coords.longitude }
-        setUserLocation(loc)
-        setFromQuery(MY_LOCATION_LABEL)
-        setLocating(false)
-      },
-      (err) => {
-        setLocating(false)
-        if (err.code === 1 /* PERMISSION_DENIED */) {
-          alert('Доступ до геолокації відхилено.\nДозвольте доступ у налаштуваннях браузера (🔒 ліворуч від адресного рядка) та спробуйте ще раз.')
-        } else if (err.code === 2 /* POSITION_UNAVAILABLE */) {
-          alert('Не вдалося визначити місцезнаходження — сигнал недоступний.')
-        } else {
-          alert('Час очікування геолокації вичерпано. Спробуйте ще раз.')
-        }
-      },
-      { enableHighAccuracy: true, timeout: 10000, maximumAge: 30000 }
-    )
-  }, [setUserLocation, setFromQuery])
+    requestLocation({ setFromLabel: true, showErrors: true })
+  }, [requestLocation])
 
   const handleSearch = useCallback(async () => {
     if (!query.trim()) return
