@@ -48,7 +48,7 @@ const MapView = ({ stops, onStopClick, userLocation }: MapViewProps) => {
     const initCenter: L.LatLngTuple = seedLocation
       ? [seedLocation.lat, seedLocation.lng]
       : LVIV_CENTER
-    const initZoom = seedLocation ? 15 : DEFAULT_ZOOM
+    const initZoom = seedLocation ? 14 : DEFAULT_ZOOM
 
     mapRef.current = L.map(containerRef.current, {
       center: initCenter,
@@ -98,7 +98,7 @@ const MapView = ({ stops, onStopClick, userLocation }: MapViewProps) => {
 
     const icon = L.divIcon({
       className: '',
-      html: `<svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="${styles.locationIcon}"><path d="M32 14C22.6112 14 15 21.7442 15 31.2945C15 40.8447 28.3614 56 32 56C35.6373 56 49 40.8447 49 31.2945C49 21.7442 41.3889 14 32 14ZM32 39.2323C27.6898 39.2323 24.1973 35.6781 24.1973 31.2945C24.1973 26.9097 27.6898 23.3566 32 23.3566C36.3089 23.3566 39.8027 26.9097 39.8027 31.2945C39.8027 35.6781 36.3089 39.2323 32 39.2323Z" fill="currentColor"/></svg>`,
+      html: `<svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3))"><path d="M32 14C22.6112 14 15 21.7442 15 31.2945C15 40.8447 28.3614 56 32 56C35.6373 56 49 40.8447 49 31.2945C49 21.7442 41.3889 14 32 14ZM32 39.2323C27.6898 39.2323 24.1973 35.6781 24.1973 31.2945C24.1973 26.9097 27.6898 23.3566 32 23.3566C36.3089 23.3566 39.8027 26.9097 39.8027 31.2945C39.8027 35.6781 36.3089 39.2323 32 39.2323Z" fill="#1B4F9B"/></svg>`,`
       iconSize: [32, 32],
       iconAnchor: [16, 28],
     })
@@ -113,7 +113,7 @@ const MapView = ({ stops, onStopClick, userLocation }: MapViewProps) => {
     // Fly only on the first location fix — subsequent GPS updates just move the marker
     if (!hasFlewRef.current) {
       hasFlewRef.current = true
-      mapRef.current.flyTo([userLocation.lat, userLocation.lng], 15, { duration: 1.2 })
+      mapRef.current.flyTo([userLocation.lat, userLocation.lng], 14, { duration: 1.2 })
     } else {
       mapRef.current.panTo([userLocation.lat, userLocation.lng], { animate: false })
     }
