@@ -85,13 +85,13 @@
 }
 
 .transferStop {
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-regular);
   color: var(--color-text-muted);
 }
 
 .transferWalk {
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   color: var(--color-text);
   display: flex;
   align-items: flex-start;
@@ -168,7 +168,7 @@
 }
 
 .stopName {
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   color: var(--color-text);
 }
 
