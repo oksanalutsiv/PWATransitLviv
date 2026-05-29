@@ -58,7 +58,7 @@ const ActiveTicketPage = () => {
                 <QRCodeSVG
                   value={ticket.qr_payload}
                   size={200}
-                  bgColor="#ffffff"
+                  bgColor="transparent"
                   fgColor="#141414"
                   level="M"
                 />
