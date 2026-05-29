@@ -7,7 +7,9 @@
   border: none;
   border-radius: var(--radius-md);
   font-size: var(--font-size-md);
-  font-family: var(--font-family-base);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-appearance: none;
+  appearance: none;
   color: var(--color-text);
   background: var(--color-border);
   box-sizing: border-box;
@@ -22,6 +24,6 @@
   -webkit-box-shadow: 0 0 0px 1000px #E0E0E0 inset;
   box-shadow: 0 0 0px 1000px #E0E0E0 inset;
   -webkit-text-fill-color: #141414;
-  font-family: var(--font-family-base) !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
 }
 .readOnly { opacity: 0.7; cursor: default; }
