@@ -38,6 +38,18 @@ export default defineConfig({
   resolve: {
     alias: { '@': path.resolve(dirname, 'src') },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name?.match(/\.woff2?$/)) {
+            return 'assets/fonts/[name][extname]'
+          }
+          return 'assets/[name]-[hash][extname]'
+        },
+      },
+    },
+  },
   test: {
     projects: [{
       extends: true,
