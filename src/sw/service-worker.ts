@@ -8,8 +8,15 @@ import { TICKETS_CACHE, API_CACHE, PAGES_CACHE, ticketsUrlPattern, supabaseUrlPa
 
 declare const self: ServiceWorkerGlobalScope
 
-// Take control of all clients immediately on activation
-self.skipWaiting()
+// When the client calls updateSW(true), it sends SKIP_WAITING so the new SW
+// activates immediately and the client reloads to pick up fresh assets.
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting()
+  }
+})
+
+// Claim all open clients once this SW activates.
 clientsClaim()
 
 // Precache all static assets (JS, CSS, HTML, images) injected by vite-plugin-pwa
