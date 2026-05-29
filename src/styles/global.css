@@ -3,7 +3,7 @@
   src: url('@/fonts/inter-v20-cyrillic_cyrillic-ext_latin_latin-ext/inter-v20-cyrillic_cyrillic-ext_latin_latin-ext-300.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   src: url('@/fonts/inter-v20-cyrillic_cyrillic-ext_latin_latin-ext/inter-v20-cyrillic_cyrillic-ext_latin_latin-ext-regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   src: url('@/fonts/inter-v20-cyrillic_cyrillic-ext_latin_latin-ext/inter-v20-cyrillic_cyrillic-ext_latin_latin-ext-500.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -27,7 +27,7 @@
   src: url('@/fonts/inter-v20-cyrillic_cyrillic-ext_latin_latin-ext/inter-v20-cyrillic_cyrillic-ext_latin_latin-ext-700.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 *,
