@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react'
 import styles from './InputField.module.css'
 
 interface InputFieldProps {
@@ -22,21 +23,42 @@ const InputField = ({
   autoComplete,
   required,
   readOnly = false,
-}: InputFieldProps) => (
-  <div className={styles.group}>
-    {label && <label className={styles.label} htmlFor={id}>{label}</label>}
-    <input
-      id={id}
-      type={type}
-      className={`${styles.input} ${readOnly ? styles.readOnly : ''}`}
-      value={value}
-      onChange={onChange ? (e) => onChange(e.target.value) : undefined}
-      placeholder={placeholder}
-      autoComplete={autoComplete}
-      required={required}
-      readOnly={readOnly}
-    />
-  </div>
-)
+}: InputFieldProps) => {
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    const input = inputRef.current
+    if (!input) return
+    // Chrome autofill overrides font-family even with !important in CSS.
+    // Detect autofill via the CSS animation trick and set an inline style
+    // (highest specificity) so Chrome cannot override the font.
+    const handleAnimationStart = (e: AnimationEvent) => {
+      if (e.animationName === 'autofillStart') {
+        input.style.fontFamily = "'Inter', system-ui, sans-serif"
+        input.style.fontWeight = '400'
+      }
+    }
+    input.addEventListener('animationstart', handleAnimationStart)
+    return () => input.removeEventListener('animationstart', handleAnimationStart)
+  }, [])
+
+  return (
+    <div className={styles.group}>
+      {label && <label className={styles.label} htmlFor={id}>{label}</label>}
+      <input
+        ref={inputRef}
+        id={id}
+        type={type}
+        className={`${styles.input} ${readOnly ? styles.readOnly : ''}`}
+        value={value}
+        onChange={onChange ? (e) => onChange(e.target.value) : undefined}
+        placeholder={placeholder}
+        autoComplete={autoComplete}
+        required={required}
+        readOnly={readOnly}
+      />
+    </div>
+  )
+}
 
 export default InputField
