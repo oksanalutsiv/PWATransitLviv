@@ -7,8 +7,8 @@
   border: none;
   border-radius: var(--radius-md);
   font-size: var(--font-size-md);
-  font-family: system-ui, sans-serif;
-  font-weight: 400;
+  font-family: system-ui, sans-serif !important;
+  font-weight: 400 !important;
   -webkit-appearance: none;
   appearance: none;
   color: var(--color-text);
