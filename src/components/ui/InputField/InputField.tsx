@@ -29,17 +29,25 @@ const InputField = ({
   useEffect(() => {
     const input = inputRef.current
     if (!input) return
-    // Chrome autofill overrides font-family even with CSS !important.
-    // Setting an inline style (highest specificity) forces Inter after autofill.
-    // We do this at several points to cover Chrome's 50–500 ms autofill window.
     const setFont = () => {
       input.style.fontFamily = "'Inter', system-ui, sans-serif"
       input.style.fontWeight = '400'
     }
+    // Fire immediately and at intervals to cover Chrome's autofill window
     setFont()
-    const t1 = setTimeout(setFont, 100)
-    const t2 = setTimeout(setFont, 400)
-    return () => { clearTimeout(t1); clearTimeout(t2) }
+    const t1 = setTimeout(setFont, 50)
+    const t2 = setTimeout(setFont, 200)
+    const t3 = setTimeout(setFont, 500)
+    const t4 = setTimeout(setFont, 1000)
+    // animationstart fires the exact moment the browser applies autofill styles
+    const onAnimationStart = (e: AnimationEvent) => {
+      if (e.animationName === 'autofillDetect') setFont()
+    }
+    input.addEventListener('animationstart', onAnimationStart)
+    return () => {
+      clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearTimeout(t4)
+      input.removeEventListener('animationstart', onAnimationStart)
+    }
   }, [])
 
   return (
